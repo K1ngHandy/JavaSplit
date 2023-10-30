@@ -14,13 +14,22 @@
             name: "Jonas Korhonen",
             email: "coffee4life@gmails.com",
             cart: ["Columbian Beans", "JavaSplit Sweet Cream"],
+            // changeEmail: (newEmail) => { // improper method with arrow function
+            //     this.email = newEmail;
+            // }
+            changeEmail (newEmail) { // proper method with traditional function
+                this.email = newEmail;
+            }
         }
+
+        console.log(user.email);
+        user.changeEmail('ih8coffeenow@gmails.com');
+        console.log(user.email);
 
         // const addItemToCart = function(item) { // traditional function
         //     return user.cart.push(item);
         // }
-
-        const addItemToCart = item => user.cart.push(item); // updated arrow function
+        const addItemToCart = item => user.cart.push(item); // updated with arrow function
 
         addItemToCart('Holiday Mug'); // add "Holiday Mug" to cart
         console.log(user.cart);
